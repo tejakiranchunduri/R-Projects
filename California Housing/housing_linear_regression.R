@@ -1,7 +1,7 @@
 knitr::opts_chunk$set(echo = TRUE)
 
 require(tidyverse)
-require(BBmisc)
+require(ggplot2)
 require(corrplot)
 
 naPercentage <- function(x){
