@@ -35,7 +35,7 @@ drop_housing <- housing[, -c(1:2)]
 
 ### feature normalization
 spread_housing <- drop_housing %>% mutate(yesno = 1) %>% spread('ocean_proximity', yesno, fill = 0)
-normalized_housing <- normalize(spread_housing, method = "standardize", range = c(0,1), margin = 2)
+normalized_housing <- spread_housing %>% select(-c(median_house_value))  %>% scale() %>% as_tibble() %>% add_column(median_house_value = spread_housing$median_house_value)
 View(normalized_housing)
 
 ### correlation matrix - linear regression
