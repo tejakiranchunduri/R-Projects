@@ -92,8 +92,8 @@ coef(lm.fit)
 ### confidence interval
 confint(lm.fit)
 
-predict(lm.fit,data.frame(median_income=(c(5,10,15))), interval="confidence")
-predict(lm.fit,data.frame(median_income=(c(5,10,15))), interval="prediction")
+predict(lm.fit,data.frame(median_income=(c(-1,0,1,2,3,4,5))), interval="confidence")
+predict(lm.fit,data.frame(median_income=(c(-1,0,1,2,3,4,5))), interval="prediction")
 
 plot(housing$median_income, housing$median_house_value, pch="+")
 abline(lm.fit,lwd=3,col="red")
