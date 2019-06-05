@@ -1,0 +1,87 @@
+trainingInput:
+  hyperparameters:
+    goal: MAXIMIZE
+    hyperparameterMetricTag: val_acc
+    maxTrials: 25
+    max_parallel_trials: 5
+    params:
+      # layer 1
+      - parameterName: conv_layer1_filter
+        type: INTEGER
+        minValue: 16
+        maxValue: 32
+        scaleType: UNIT_LINEAR_SCALE
+      - parameterName: conv_layer1_kernel_size
+        type: DISCRETE
+        discreteValues: [3, 5]
+      - parameterName: conv_layer1_activation
+        type: CATEGORICAL
+        categoricalValues: ["relu", "sigmoid", "adam"]
+      # layer 2
+      - parameterName: conv_layer2_filter
+        type: INTEGER
+        minValue: 16
+        maxValue: 32
+        scaleType: UNIT_LINEAR_SCALE
+      - parameterName: conv_layer2_kernel_size
+        type: DISCRETE
+        discreteValues: [3, 5]
+      - parameterName: conv_layer2_activation
+        type: CATEGORICAL
+        categoricalValues: ["relu", "sigmoid", "adam"]
+      # max pooling and dropout 2
+      - parameterName: max_pool_layer1_size
+        type: DISCRETE
+        discreteValues: [2, 3, 4]
+      - parameterName: dropout_layer1
+        type: DOUBLE
+        minValue: 0.1
+        maxValue: 0.3
+        scaleType: UNIT_REVERSE_LOG_SCALE
+      # layer 3
+      - parameterName: conv_layer3_filter
+        type: INTEGER
+        minValue: 16
+        maxValue: 32
+        scaleType: UNIT_LINEAR_SCALE
+      - parameterName: conv_layer3_kernel_size
+        type: DISCRETE
+        discreteValues: [3, 5]
+      - parameterName: conv_layer3_activation
+        type: CATEGORICAL
+        categoricalValues: ["relu", "sigmoid", "adam"]
+      # layer 4
+      - parameterName: conv_layer4_filter
+        type: INTEGER
+        minValue: 16
+        maxValue: 32
+        scaleType: UNIT_LINEAR_SCALE
+      - parameterName: conv_layer4_kernel_size
+        type: DISCRETE
+        discreteValues: [3, 5]
+      - parameterName: conv_layer4_activation
+        type: CATEGORICAL
+        categoricalValues: ["relu", "sigmoid", "adam"]
+      # max pooling and dropout 2
+      - parameterName: max_pool_layer2_size
+        type: DISCRETE
+        discreteValues: [2, 3, 4]
+      - parameterName: dropout_layer2
+        type: DOUBLE
+        minValue: 0.1
+        maxValue: 0.3
+        scaleType: UNIT_REVERSE_LOG_SCALE
+      # dense layer and drop out
+      - parameterName: dense_final
+        type: INTEGER
+        minValue: 256
+        maxValue: 512
+        scaleType: UNIT_LINEAR_SCALE
+      - parameterName: activation_final
+        type: CATEGORICAL
+        categoricalValues: ["relu", "sigmoid", "adam"]
+      - parameterName: dropout_final
+        type: DOUBLE
+        minValue: 0.1
+        maxValue: 0.5
+        scaleType: UNIT_REVERSE_LOG_SCALE
